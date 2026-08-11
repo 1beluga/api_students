@@ -1,0 +1,37 @@
+import { CreateStudentDTO } from "../model/students";
+import { StudentRepository } from "../repository/StudentRepository";
+
+export class StudentService {
+  private studentRepo = new StudentRepository();
+
+  async getAllStudents() {
+    return await this.studentRepo.findAll();
+  }
+
+  async getStudentsById(id: number) {
+    if (id <= 0) {
+      throw new Error("The given ID is invalid");
+    }
+
+    const student = await this.studentRepo.findById(id);
+
+    if (!student) {
+      throw new Error("Student not found");
+    }
+
+    return student;
+  }
+
+  async createStudent(data: CreateStudentDTO) {
+    if (!data.lastName || !data.firstName || !data.email) {
+      throw new Error("All fields are needed");
+    }
+
+    const existingEmail = await this.studentRepo.findByEmail(data.email);
+    if (existingEmail) {
+      throw new Error("This email is already used");
+    }
+
+    return await this.studentRepo.create(data);
+  }
+}
