@@ -1,12 +1,12 @@
 import express from "express";
-import studentsRoute from "./route/studentsRoute"
+import studentRoute from "./route/StudentRoute"
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-app.use('/students', studentsRoute);
+app.use('/api/students', studentRoute);
 
 app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+  console.log("App listening to PORT: ${PORT}");
+})

@@ -4,9 +4,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 export const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  connectionString: process.env.DB_URL,
 });
 
 pool.on('error', (err) => {
-  console.error('Erreur inattendue sur le pool de clients', err);
+  console.error('Unexpected error on iddle client', err);
 });
