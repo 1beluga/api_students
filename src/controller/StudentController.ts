@@ -7,9 +7,11 @@ export class StudentController {
   private handleError(error: unknown, res: Response): void {
     const message = error instanceof Error ? error.message : "Internal server error";
 
-    if (message.toLowerCase().includes("not found")) {
+    const lowerMessage = message.toLowerCase();
+
+    if (lowerMessage.includes("not found")) {
       res.status(404).json({ error: message });
-    } else if (message.toLowerCase().includes("invalid") || message.toLowerCase().includes("already used") || message.toLowerCase().includes("needed")) {
+    } else if (lowerMessage.includes("invalid") || lowerMessage.includes("already used") || lowerMessage.includes("needed")) {
       res.status(400).json({ error: message });
     } else {
       res.status(500).json({ error: message });
