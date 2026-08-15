@@ -8,5 +8,5 @@ app.use(express.json());
 app.use('/api/students', studentRoute);
 
 app.listen(PORT, () => {
-  console.log("App listening to PORT: ${PORT}");
+  console.log(`App listening to PORT: ${PORT}`);
 })
