@@ -32,6 +32,12 @@ export class StudentService {
       throw new Error("This email is already used");
     }
 
+    const correctEmail = data.email.trim().toLowerCase();
+
+    if (!correctEmail.includes("@") || !correctEmail.endsWith(".com") || correctEmail.indexOf("@") == 0) {
+      throw new Error("Invalid email format");
+    }
+
     return await this.studentRepo.create(data);
   }
 
