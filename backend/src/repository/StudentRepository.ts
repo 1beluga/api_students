@@ -102,8 +102,8 @@ export class StudentRepository {
 
   async create(data: CreateStudentDTO) {
     const query = `
-      INSERT INTO students (first_name, last_name, email)
-      VALUES ($1, $2, $3)
+      INSERT INTO students (first_name, last_name, email, password_hash)
+      VALUES ($1, $2, $3, $4)
       RETURNING
         id,
         first_name AS "firstName",
@@ -115,7 +115,7 @@ export class StudentRepository {
         created_at AS "createdAt"
     `;
 
-    const values = [data.firstName, data.lastName, data.email];
+    const values = [data.firstName, data.lastName, data.email, data.password];
     const result = await pool.query(query, values);
     return result.rows[0];
   }

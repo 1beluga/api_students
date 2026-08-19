@@ -4,7 +4,6 @@
     "dev:frontend": "cd frontend && npx vite",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
   },
-
   "dependencies": {
     "concurrently": "^10.0.5",
     "cors": "^2.8.6",
@@ -18,6 +17,7 @@
     "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
