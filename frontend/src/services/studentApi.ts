@@ -1,6 +1,5 @@
 // frontend/src/services/studentApi.ts
-
-const API_BASE_URL = 'http://localhost:3000/api/students';
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api/students`;
 
 interface StudentPayload {
   firstName: string;
@@ -10,8 +9,7 @@ interface StudentPayload {
 
 interface Student extends StudentPayload {
   id: string;
-  // Assuming a normalized email field might be returned by the backend
-  normalizedEmail?: string; 
+  normalizedEmail?: string;
 }
 
 interface ApiResponse<T> {
