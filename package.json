@@ -1,18 +1,24 @@
 {
   "scripts": {
-    "migrate": "tsx src/migration/run-migration.ts",
-    "dev": "tsx src/server.ts"
+    "dev:backend": "cd backend && npx tsx watch src/server.ts",
+    "dev:frontend": "cd frontend && npx vite",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
   },
+
   "dependencies": {
+    "concurrently": "^10.0.5",
+    "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
     "jsonwebtoken": "^9.0.3",
     "pg": "^8.23.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^1.1.0",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
+    "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^22.20.1",
