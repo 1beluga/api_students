@@ -18,7 +18,6 @@ const TOKEN_KEY = 'sp_token';
 const STUDENT_KEY = 'sp_student';
 
 export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  // Switched from localStorage to sessionStorage
   const [token, setToken] = useState<string | null>(() => sessionStorage.getItem(TOKEN_KEY));
   const [student, setStudent] = useState<Student | null>(() => {
     const raw = sessionStorage.getItem(STUDENT_KEY);
@@ -34,7 +33,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setLoading(false);
 
     if (result.success && result.token && result.student) {
-      // Switched from localStorage to sessionStorage
       sessionStorage.setItem(TOKEN_KEY, result.token);
       sessionStorage.setItem(STUDENT_KEY, JSON.stringify(result.student));
       setToken(result.token);
@@ -47,7 +45,6 @@ export const AuthProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   }, []);
 
   const logout = useCallback(() => {
-    // Switched from localStorage to sessionStorage
     sessionStorage.removeItem(TOKEN_KEY);
     sessionStorage.removeItem(STUDENT_KEY);
     setToken(null);
@@ -67,5 +64,5 @@ export const useAuth = (): AuthContextValue => {
   return ctx;
 };
 
-// Updated helper for services to pull from sessionStorage
+
 export const getStoredToken = (): string | null => sessionStorage.getItem(TOKEN_KEY);

@@ -6,7 +6,7 @@ interface StudentPayload {
   firstName: string;
   lastName: string;
   email: string;
-  password?: string; // Added password for creation
+  password?: string;
 }
 
 interface Student extends StudentPayload {

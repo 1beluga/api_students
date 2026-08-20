@@ -33,7 +33,6 @@ const LoginPage: React.FC = () => {
       }}
     >
       <div className="w-full max-w-sm bg-[#1e1e2e] text-[#cdd6f4] rounded-xl border border-[#313244] shadow-2xl overflow-hidden font-sans">
-        {/* Titlebar */}
         <div className="bg-[#181825] px-4 py-3 flex items-center border-b border-[#313244]">
           <div className="flex space-x-2">
             <span className="w-3 h-3 rounded-full inline-block bg-[#f38ba8]" />
