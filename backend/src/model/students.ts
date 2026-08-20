@@ -1,12 +1,14 @@
 export interface Student {
-    id: string;
-    firstName?: string;
-    lastName?: string;
-    first_name?: string;
-    last_name?: string;
-    name?: string;
-    email: string;
-    normalizedEmail?: string;
+  id: string;
+  firstName?: string;
+  lastName?: string;
+  first_name?: string;
+  last_name?: string;
+  name?: string;
+  email: string;
+  normalizedEmail?: string;
+  password?: string;
+  password_hash?: string;
 }
 
 export interface CreateStudentDTO {
@@ -15,4 +17,5 @@ export interface CreateStudentDTO {
   email: string;
   address?: string;
   phoneNumber?: string;
+  password?: string;
 }

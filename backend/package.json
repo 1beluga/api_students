@@ -1,11 +1,12 @@
 {
   "scripts": {
-      "build": "tsc",
-      "start": "node dist/server.ts",
-      "migrate": "tsx src/migration/run-migration.ts",
-      "dev": "tsx src/server.ts"
-    },
+    "build": "tsc",
+    "start": "node dist/server.ts",
+    "migrate": "tsx src/migration/run-migration.ts",
+    "dev": "tsx src/server.ts"
+  },
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",

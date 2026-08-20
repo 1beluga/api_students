@@ -1,5 +1,5 @@
 import { CreateStudentDTO } from "../model/students";
-import { StudentRepository } from "../repository/StudentRepository";
+import { StudentRepository } from "../repository/studentRepository";
 
 export class StudentService {
   private studentRepo = new StudentRepository();
