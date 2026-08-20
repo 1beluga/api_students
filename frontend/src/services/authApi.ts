@@ -1,4 +1,4 @@
-const AUTH_BASE_URL = `${import.meta.env.VITE_API_URL}/api/auth`;
+const AUTH_BASE_URL = `${import.meta.env.VITE_API_URL}/auth`;
 
 export interface Student {
   id: number;
