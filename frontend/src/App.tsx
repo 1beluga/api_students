@@ -5,13 +5,14 @@ import StudentList from './components/StudentList';
 import { useAuth } from './context/AuthContext';
 
 function App() {
-  const { student } = useAuth();
+  const { professor } = useAuth();
   const [refreshListTrigger, setRefreshListTrigger] = useState(0);
+
   const handleStudentCreated = useCallback(() => {
     setRefreshListTrigger((prev) => prev + 1);
   }, []);
 
-  if (!student) {
+  if (!professor) {
     return <LoginPage/>
   }
 
@@ -25,7 +26,6 @@ function App() {
         backgroundSize: '22px 22px, 100% 100%',
       }}
     >
-
         <main className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
           <div className="lg:col-span-5">
             <StudentForm onStudentCreated={handleStudentCreated} />

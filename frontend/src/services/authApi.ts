@@ -1,17 +1,16 @@
 const AUTH_BASE_URL = `${import.meta.env.VITE_API_URL}/auth`;
 
-export interface Student {
+export interface Professor {
   id: number;
   first_name: string;
   last_name: string;
   email: string;
-  status: string;
 }
 
 interface LoginResult {
   success: boolean;
   token?: string;
-  student?: Student;
+  professor?: Professor;
   message?: string;
 }
 
@@ -22,14 +21,11 @@ export const login = async (email: string, password: string): Promise<LoginResul
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
-
     const data = await response.json();
-
     if (!response.ok) {
       return { success: false, message: data.message || 'Login failed' };
     }
-
-    return { success: true, token: data.token, student: data.student };
+    return { success: true, token: data.token, professor: data.professor };
   } catch (err: any) {
     return { success: false, message: err.message || 'Network error' };
   }
