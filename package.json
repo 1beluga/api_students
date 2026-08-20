@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "migrate": "cd backend && tsx src/migration/run-migration.ts",
     "dev:backend": "cd backend && npx tsx watch src/server.ts",
     "dev:frontend": "cd frontend && npx vite",
     "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\""
@@ -13,7 +14,7 @@
     "pg": "^8.23.0",
     "reflect-metadata": "^0.2.2",
     "typeorm": "^1.1.0",
-    "typescript": "^7.0.2",
+    "typescript": "^5.9.3",
     "zod": "^4.4.3"
   },
   "devDependencies": {
@@ -21,9 +22,6 @@
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/jsonwebtoken": "^9.0.10",
-    "@types/node": "^22.20.1",
-    "@types/pg": "^8.21.0",
-    "ts-node": "^10.9.2",
-    "tsx": "^4.23.12"
+    "@types/node": "^22.20.1"
   }
 }
