@@ -1,5 +1,5 @@
 import express from "express";
-import studentRoute from "./route/StudentRoute";
+import studentRoute from "./route/studentRoute";
 import authRoute from "./route/authRoute";
 import statsRoute from "./route/statsRoute"
 import cors from 'cors';

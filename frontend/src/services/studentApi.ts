@@ -1,6 +1,6 @@
 import { getStoredToken } from "../context/AuthContext";
 
-const API_BASE_URL = `${import.meta.env.VITE_API_URL}/api/students`;
+const API_BASE_URL = `${import.meta.env.VITE_API_URL}/students`;
 
 interface StudentPayload {
   firstName: string;
